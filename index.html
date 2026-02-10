@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales y bucles</title>
+    <style>
+        .menor{
+            border: 5px solid red;
+            width: 200px;
+            height: 200px;
+        }
+        .mayor{
+            border: 5px solid green;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola Condicionales</h1>
+    <label for="Edad">Edad</label>
+    <input label="Edad" placeholder="Edad" id="input"type="text" >
+    <button id="Button">ENTRAR</button>
+    <div id="Resultado">
+        
+    </div>
+    <script>
+        // 1. Selecionar el Input
+        // 2. Seleccionar button
+        // 3. Sacar por consola el input i button
+        // 4. Añadir evento a button
+        // 5. Crear funcion
+        // 6. Console.log("dentro funcion")
+        //  6.1 Leemos el value de input y lo ponemos en edat
+        //  6.2 MIramos si es >= 18
+        // 7. Si es si console.log("Sí")
+        // 8. Si es no console.log("No")
+        // 9. Selecionamos el div y metemos edad en innerHTML
+        //  6.2.4 Añadimos classe verde
+        //  6.2.5 Quitamos clase rojo
+        const Resultado = document.querySelector("#Resultado")
+        const edad = document.querySelector("#input")
+        const button = document.querySelector("#Button")
+        console.log(edad)
+        console.log(button)
+        button.addEventListener("click", clickDiv)
+        function clickDiv(){
+            console.log("Le has dado click")
+            if (edad.value >= 18){
+                console.log("Eres mayor de edad")
+                Resultado.classList.remove("menor")
+                Resultado.classList.add("mayor")
+            }
+            else{
+                console.log("Eres menor de edad")
+                Resultado.classList.remove("mayor")
+                Resultado.classList.add("menor")
+            }
+            Resultado.innerHTML = edad.value 
+        }
+    </script>
+    <!-- Hay que crear un desplegable con opciones de coches y al darle el boton de ver salga la imagen de ese coche -->
+</body>
+</html>
